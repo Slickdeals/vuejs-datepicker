@@ -27,7 +27,7 @@
   "private": false,
   "license": "MIT",
   "scripts": {
-    "build": "npm run lint && rm -rf dist/* && rollup -c scripts/build.js && rollup -c scripts/build-locale.js",
+    "build": "npm run lint && rimraf dist/* && rollup -c scripts/build.js && rollup -c scripts/build-locale.js",
     "serve": "rollup -c scripts/serve.js --watch",
     "test": "jest --config test/unit/jest.conf.js --coverage",
     "lint": "eslint --ext .js,.vue src test/unit/specs",
@@ -74,7 +74,7 @@
     "ora": "^1.2.0",
     "parse5": "^2.1.0",
     "pre-commit": "^1.2.2",
-    "rimraf": "^2.6.0",
+    "rimraf": "^2.6.3",
     "rollup": "^1.16.2",
     "rollup-plugin-babel": "^4.3.3",
     "rollup-plugin-commonjs": "^10.0.0",
