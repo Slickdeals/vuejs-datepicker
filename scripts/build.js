@@ -10,7 +10,7 @@ import node from 'rollup-plugin-node-resolve'
 import css from 'rollup-plugin-css-only'
 
 export default [{
-  input: path.join(__dirname, '..', 'src', 'components', 'Datepicker.vue'),
+  input: path.join(__dirname, '..', 'src', 'index.js'),
   output: [
     {
       file: 'dist/vuejs-datepicker.js',
@@ -31,20 +31,15 @@ export default [{
       extensions: ['.js', '.jsx', '.vue']
     }),
     css(),
-    vue({
-      css: false,
-      compileTemplate: true,
-      template: {
-        isProduction: true,
-      }
-    }),
+    vue(),
     postcss({plugins: [autoprefixer()]}),
     replace({
       'process.env.NODE_ENV': JSON.stringify('production')
     }),
     commonjs(),
     babel({exclude: 'node_modules/**'})
-  ]
+  ],
+  external: ['vue'],
 }, {
   input: path.join(__dirname, '..', 'src', 'components', 'Datepicker.vue'),
   output: {
@@ -55,10 +50,11 @@ export default [{
     sourcemap: false
   },
   plugins: [
-    vue({css: true}),
+    vue(),
     postcss({plugins: [autoprefixer()]}),
     commonjs(),
     terser(),
     babel({exclude: 'node_modules/**'})
-  ]
+  ],
+  external: ['vue'],
 }]

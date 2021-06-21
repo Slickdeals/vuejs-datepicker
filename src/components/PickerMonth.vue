@@ -35,6 +35,7 @@ export default {
     allowedToShowView: Function,
     useUtc: Boolean
   },
+  emits: ['selectMonth', 'changedYear', 'showYearCalendar'],
   data () {
     const constructedDateUtils = makeDateUtils(this.useUtc)
     return {

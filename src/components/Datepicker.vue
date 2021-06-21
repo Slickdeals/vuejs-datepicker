@@ -155,6 +155,7 @@ export default {
       default: 'year'
     }
   },
+  emits: ['input', 'selected', 'cleared', 'selectedDisabled', 'changedMonth', 'changedYear', 'closed'],
   data () {
     const startDate = this.openDate ? new Date(this.openDate) : new Date()
     const constructedDateUtils = makeDateUtils(this.useUtc)

@@ -84,6 +84,7 @@ export default {
         : this.isNextDecadeDisabled(this.pageTimestamp)
     }
   },
+  emits: ['selectYear', 'changedDecade'],
   data () {
     const constructedDateUtils = makeDateUtils(this.useUtc)
     return {

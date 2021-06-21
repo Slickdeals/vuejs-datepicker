@@ -64,6 +64,7 @@ export default {
     bootstrapStyling: Boolean,
     useUtc: Boolean
   },
+  emits: ['showCalendar', 'typedDate', 'closeCalendar', 'clearDate'],
   data () {
     const constructedDateUtils = makeDateUtils(this.useUtc)
     return {

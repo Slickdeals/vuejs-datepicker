@@ -49,6 +49,7 @@ export default {
     mondayFirst: Boolean,
     useUtc: Boolean
   },
+  emits: ['selectedDisabled', 'selectDate', 'showMonthCalendar', 'changedMonth'],
   data () {
     const constructedDateUtils = makeDateUtils(this.useUtc)
     return {
